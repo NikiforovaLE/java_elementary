@@ -2,15 +2,21 @@ package ru.job4j.condition;
 
 public class Point {
 
-    public static double distance(int x1, int y1, int x2, int y2) {
-        double x = Math.pow(x2 - x1, 2);
-        double y = Math.pow(y2 - y1, 2);
-        double sum = x + y;
-        return Math.sqrt(sum);
+    private final int x;
+    private final int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public double distance(Point that) {
+        return Math.sqrt(Math.pow(this.x - that.x, 2) + Math.pow(this.y - that.y, 2));
     }
 
     public static void main(String[] args) {
-        double result = Point.distance(0, 0, 2, 0);
-        System.out.println("the distance is " + result + "metres");    // (:
+        Point a = new Point(0, 0);
+        Point b = new Point(0, 2);
+        System.out.println("the distance is " + a.distance(b) + " metres");    // (:
     }
 }
