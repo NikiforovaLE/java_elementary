@@ -5,7 +5,12 @@ public class Max {
         return first >= second ? first : second;
     }
 
-    public static void main(String[] args) {
-        System.out.println(findMax(4, 7));
+    public static int findMax(int first, int second, int third) {
+        return findMax(first, findMax(second, third));
     }
+
+    public static int findMax(int first, int second, int third, int fourth) {
+        return findMax(first, findMax(second, third, fourth));
+    }
+
 }
